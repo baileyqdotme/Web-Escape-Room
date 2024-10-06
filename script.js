@@ -17,7 +17,7 @@ for (let rule in rules) {
     console.log(`%c${rule}. ${rules[rule]}`, "color: #4caf50; font-size: 16px;"); // Brown for each rule
 }
 
-// .js
+// script.js
 
 level = null;
 last_level = 10;
