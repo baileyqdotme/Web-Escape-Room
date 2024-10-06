@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #131416;
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+header {
+    background-color: #131416;
+    border-bottom: solid 0.1vh #2E3034;
+
+    /* Shadow */
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+
+    height: 7vh;
+
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 2vh;
+    
+    /* make responsive with size */
+    font-size: 2vh;
+
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 500;
+
+    position: sticky; top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #8E8E8E;
+}
+
+.header-right a {
+    color: #8E8E8E;
+    text-decoration: none;
+    margin-left: 1vh;
+
+    transition-duration: 100ms;
+}
+
+.header-right a:hover {
+    color: white;
+}
+
+.header-left a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1vh;
+
+    transition-duration: 100ms;
+}
+
+.header-left a:hover {
+    color: #8E8E8E;
+}
+
+/* Main */
+
+main {
+    padding: 2vh;
+}
+
+.main-content-container {
+    /* center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* height */
+    min-height: calc(100vh - 7vh);
+}
+
+.main-content-card {
+    background-color: #1E2023;
+    border-radius: 1vh;
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    padding: 2vh;
+    margin-bottom: 2vh;
+
+    text-align: center;
+}
+
+.main-content-card p {
+    font-size: 2.0vh;
+    font-weight: 500;
+}
+
+.main-content-card-button {
+    background-color: #2E3034;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    font-size: 2.0vh;
+    font-weight: 500;
+    padding: 1vh 2vh;
+    margin-top: 1vh;
+    text-decoration: none;
+    display: block;
+    margin-top: 4vh;
+
+    cursor: none;
+
+    transition-duration: 100ms;
+}
+
+.main-content-card-button:hover {
+    background-color: #3E4044; /* u'll never see this */
+}
+
+.bigbigh1 {
+    font-size: 6.5vh;
+    font-weight: 800;
+}
+
+.lvl2-button-container {
+    /* let all the buttons be in rows and just center them */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vh;
+}
+
+.lvl2-button {
+    background-color: #2E3034;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    font-size: 2.0vh;
+    font-weight: 500;
+    padding: 1vh 2vh;
+    margin-top: 1vh;
+    text-decoration: none;
+    display: block;
+    margin-top: 0.5vh;
+
+    cursor: pointer;
+
+    transition-duration: 100ms;
+}
+
+.lvl2-button:hover {
+    background-color: #3E4044; 
+}
+
+.lvl2-button:active {
+    background-color: #1E2023;
+}
+
+#incorrect-button-dialog {
+    background-color: #3A3B3C !important;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.2);
+    padding: 3vh;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    border: 0.2vh solid #2A2B2C;
+}
+
+#incorrect-button-dialog p {
+    font-size: 3.5vh;
+    font-weight: 700;
+    color: #E0E0E0;
+    margin-bottom: 1vh;
+}
+
+#incorrect-button-dialog button {
+    background-color: #4A4B4C;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    font-size: 2.0vh;
+    font-weight: 500;
+    padding: 1.5vh 3vh;
+    margin-top: 2vh;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out, transform 100ms ease-in-out;
+    outline: none;
+}
+
+#incorrect-button-dialog button:hover {
+    background-color: #5A5B5C; 
+}
+
+#incorrect-button-dialog button:active {
+    background-color: #2A2B2C;
+    transform: scale(0.98);
+}
+
+/* Overlay to lock the scroll */
+#dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.418);
+    z-index: 999;
+    display: none; /* Hidden by default */
+}

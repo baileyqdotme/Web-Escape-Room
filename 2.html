@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Web Escape Room • baileyq.me</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href=".css">
+    </head>
+    <body>
+
+        <header>
+            <div class="header-left">
+                <a href="#home" id="level-indicator">Level 2</a>
+            </div>
+            <div class="header-right">
+                <a class="header-nav-selected" href="https://baileyq.me">Created by baileyq.me</a>
+            </div>
+        </header>
+
+        <main class="main-content-container">
+            <div class="main-content-card" style="width: 30%;">
+                <h1 class="bigbigh1">Level 2</h1>
+                <p>How do you feel about buttons?</p>
+                <p>What about <b>600</b> buttons?</p>
+                <div style="margin: 3vh;"></div>
+                <p style="font-weight: bold;">Find the working button and click it to move on.</p>
+            </div>
+
+            <div class="main-content-card" style="width: 70%;">
+                <h1 class="bigbigh1">600 Buttons</h1>
+                <div class="lvl2-button-container" id="lvl2-button-container"></div>
+            </div>
+        </main>
+        
+        <script src=".js" async defer></script>
+
+        <dialog id="incorrect-button-dialog">
+            <p>Incorrect button. Try again.</p>
+            <button onclick="hideDialog()">Close</button>
+        </dialog>
+
+        <script>
+
+            level = 2;
+            level_hint = "You need to find the button with the id of 'lvl2-button-correct' and click it to move on.";
+
+            function showDialog() {
+                document.getElementById('incorrect-button-dialog').showModal();
+                document.body.style.overflow = 'hidden'; // Lock the scroll
+            }
+
+            function hideDialog() {
+                document.getElementById('incorrect-button-dialog').close();
+                document.body.style.overflow = 'auto'; // Unlock the scroll
+            }
+
+            var winner = Math.floor(Math.random() * 600) + 1;
+
+            for (i = 1; i <= 600; i++) {
+                var button = document.createElement("button");
+                button.innerHTML = "Button " + i;
+                button.className = "lvl2-button";
+                
+                if (i == winner) {
+                    button.id = "lvl2-button-correct";
+                } else {
+                    button.id = "lvl2-button-incorrect";
+                }
+
+                button.onclick = function() {
+                    if (this.id == "lvl2-button-correct") {
+                        window.location.href = "3.html";
+                    } else {
+                        showDialog();
+                    }
+                }
+                document.getElementById("lvl2-button-container").appendChild(button);
+            }
+        
+        </script>
+
+    </body>
+</html>

@@ -9,7 +9,62 @@
         <link rel="stylesheet" href=".css">
     </head>
     <body>
+
+        <header>
+            <div class="header-left">
+                <a href="#home">Web Escape Room</a>
+            </div>
+            <div class="header-right">
+                <a class="header-nav-selected" href="https://baileyq.me">Created by baileyq.me</a>
+            </div>
+        </header>
+
+        <main class="main-content-container">
+            <div class="main-content-card" style="width: 30%;">
+                <h1 class="bigbigh1">Web Escape Room</h1>
+                <p>This site is a web-based escape room. You will need to solve puzzles and find clues to escape by thinking outside the box. Good luck!</p>
+                <a href="#try-inspect-element" class="main-content-card-button" id="main-content-card-button">Start</a>
+                <!-- (!) Take a look at the "Console" tab. -->
+            </div>
+        </main>
         
         <script src=".js" async defer></script>
+
+        <script>
+
+            level = 1;
+            level_hint = "The button is a lie.";
+
+            // HINT: The button is a lie.
+
+            button_hidden_once = false;
+
+            document.getElementById("main-content-card-button").addEventListener("mouseover", function() {
+                if (!button_hidden_once) {
+                    document.getElementById("main-content-card-button").style.opacity = "0";
+                    button_hidden_once = true;
+                }
+            });
+
+            document.getElementById("main-content-card-button").addEventListener("mouseout", function() {
+                document.getElementById("main-content-card-button").style.opacity = "100";
+                document.getElementById("main-content-card-button").textContent = "Maybe there's another way...";
+                document.getElementById("main-content-card-button").style.backgroundColor = "red";
+            });
+
+            document.getElementById("main-content-card-button").addEventListener("click", function() {
+                document.getElementById("main-content-card-button").style.opacity = "100";
+                document.getElementById("main-content-card-button").textContent = "Maybe there's another way...";
+                document.getElementById("main-content-card-button").style.backgroundColor = "red";
+            });
+
+            console.log("%cWhen you are ready to begin, run the %cstart() %cfunction in the console.", "color: #4caf50; font-size: 20px;", "color: coral; font-size: 20px;", "color: #4caf50; font-size: 20px;");
+        
+            function start() {
+                document.location.href = "2.html";
+            }
+        
+        </script>
+
     </body>
 </html>
